@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InfoController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\BrowsershotController;
+use App\Http\Controllers\helpController;
+use App\Http\Controllers\helpingController;
 
 
 /*
@@ -20,6 +22,19 @@ use App\Http\Controllers\BrowsershotController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/insertion1', [helpingController::class,'insertion1']);
+Route::post('/insertion1', [helpingController::class,'do_insertion1']);
+
+Route::get('/showing1', [helpingController::class,'do_showing1']);
+Route::post('/showing1', [helpingController::class,'do_showing1']);
+
+
+Route::get('/insertion', [helpController::class,'insertion']);
+Route::post('/insertion', [helpController::class,'do_insertion']);
+
+Route::get('/showing', [helpController::class,'do_showing']);
+Route::post('/showing', [helpController::class,'do_showing']);
   
 Route::get('/add', [InfoController::class,'add1']);
 Route::post('/add', [InfoController::class,'do_add1']);
